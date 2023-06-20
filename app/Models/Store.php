@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Store extends Model
+{
+    use HasFactory;
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
+    }
+
+    public function region()
+    {
+        return $this->belongsTo('App\Models\Region', 'region_id');
+    }
+
+    public function workplaces()
+    {
+        return $this->morphMany(Workplace::class, 'workplace');
+    }
+
+    public function storeDocs()
+    {
+        return $this->hasMany('App\Models\StoreDoc');
+    }
+}

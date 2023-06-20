@@ -1,0 +1,29 @@
+body {
+   margin-bottom: 260px;
+}
+.bg-brand {
+  background-color: #6559d4;
+}
+.navbar.bg-brand {
+  border-bottom: 5px solid #463bab;
+}
+.checkbox-ids {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+.bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(79,70,229,var(--tw-bg-opacity));
+}
+.checkbox-ids {
+  width: 18px;
+  height: 18px;
+}
+.offcanvas.offcanvas-top,
+.offcanvas.offcanvas-bottom {
+  height: 37vh;
+}
+.modal.show .modal-dialog {
+  margin-bottom: 200px;
+}
