@@ -117,10 +117,12 @@ class InputController extends Controller
         $app->save();
 
         // Email subject
+
         $subject = "SapaParts - Новая заявка от $request->name";
 
         // Email content
         $content = "<h2>SapaParts</h2>";
+
         $content .= "<b>Имя: $request->name</b><br>";
         $content .= "<b>Номер: $request->phone</b><br>";
         $content .= "<b>Email: $request->email</b><br>";
@@ -129,11 +131,13 @@ class InputController extends Controller
         $content .= "<b>Время: " . date('G:i') . "</b>";
 
         $headers = "From: serv@sapaparts.kz \r\n" .
+
                    "MIME-Version: 1.0" . "\r\n" . 
                    "Content-type: text/html; charset=UTF-8" . "\r\n";
 
         // Send the email
         if (mail('issayev.adilet@gmail.com', $subject, $content, $headers)) {
+
             $status = 'Ваша заявка принята. Спасибо!';
         }
         else {

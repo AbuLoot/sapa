@@ -43,6 +43,7 @@
                           <td>{{ (isset($order->region->title)) ? $order->region->title : '' }} {{ $order->address }}</td>
                           <td>
                             <?php $countAllProducts = unserialize($order->count) ?? []; $i = 0; ?>
+
                             @foreach ($countAllProducts as $id => $countProduct)
                               @if (isset($order->products[$i]) AND $order->products[$i]->id == $id)
                                 {{ $countProduct . ' шт.' }} <a href="/p/{{ $order->products[$i]->id.'-'.$order->products[$i]->slug }}">{{ $order->products[$i]->title }}</a><br>
