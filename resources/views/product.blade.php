@@ -91,13 +91,7 @@
           <!-- .product__sidebar -->
           <div class="product__sidebar">
             @if(isset($product->company)) <div>Марка: {{ $product->company->title }}</div>@endif
-            <div>Артикулы:
-              <br>
-              <?php $idCodes = json_decode($product->id_codes, true) ?? []; ?>
-              @foreach($idCodes as $idCode => $idCodeCount)
-               {{ $idCode }}: {{ $idCodeCount }}шт<br>
-              @endforeach
-            </div>
+            <div>Артикулы: {{ $product->id_codes }}</div>
             <div>Модели:
               @foreach($product->projects as $project)
                {{ $project->title }},
@@ -128,7 +122,7 @@
                   </div>
                   <div class="product__actions-item product__actions-item--addtocart">
                     @if ($product->count_web == 0)
-                      <a href="/i/contacts" class="btn btn-primary btn-sm">Предзаказ</a>
+                      <a href="/i/contacts" class="btn btn-primary btn-lg">Предзаказ</a>
                     @elseif (is_array($items) AND isset($items['products_id'][$product->id]))
                       <a href="/cart" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="top" title="Перейти в корзину">Оформить</a>
                     @else

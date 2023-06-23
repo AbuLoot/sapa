@@ -514,7 +514,7 @@
                   <?php else : ?>
                     <li class="mobile-links__item" data-collapse-item>
                       <div class="mobile-links__item-title">
-                        <a href="/b/{{ $parent_slug.'/'.$project->slug .'/'. $project->id }}" class="mobile-links__item-link">{{ $project->title }}</a>
+                        <a href="/brand/{{ $project->slug }}" class="mobile-links__item-link">{{ $project->title }}</a>
                       </div>
                     </li>
                   <?php endif; ?>
