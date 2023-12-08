@@ -84,17 +84,6 @@
             <li @if(Request::is($lang.'/pos/cash-reconciliation*')) class="active" @endif><a href="/{{ $lang }}/pos/cash-reconciliation"><i class="material-icons md-20">money</i> Сверка кассы</a></li>
           </ul>
 
-          <div class="btn-sidebar" role="button" data-toggle="collapse" href="#sidebarResources" aria-expanded="true" aria-controls="sidebarResources">Ресурсы <span class="caret"></span></div>
-          <ul class="nav nav-sidebar collapse in" id="sidebarResources">
-            @can('viewAny', App\Models\Category::class)<li @if(Request::is($lang.'/admin/categories*')) class="active" @endif><a href="/{{ $lang }}/admin/categories"><i class="material-icons md-20">category</i> Категории</a></li>@endcan
-            @can('viewAny', App\Models\Product::class)<li @if(Request::is($lang.'/admin/products*')) class="active" @endif><a href="/{{ $lang }}/admin/products"><i class="material-icons md-20">store</i> Продукты</a></li>@endcan
-            @can('viewAny', App\Models\Mode::class)<li @if(Request::is($lang.'/admin/modes*')) class="active" @endif><a href="/{{ $lang }}/admin/modes"><i class="material-icons md-20">style</i> Режимы</a></li>@endcan
-            @can('viewAny', App\Models\Company::class)<li @if(Request::is($lang.'/admin/companies*')) class="active" @endif><a href="/{{ $lang }}/admin/companies"><i class="material-icons md-20">business</i> Компании</a></li>@endcan
-            @can('viewAny', App\Models\User::class)<li @if(Request::is($lang.'/admin/users*')) class="active" @endif><a href="/{{ $lang }}/admin/users"><i class="material-icons md-20">people_outline</i> Пользователи</a></li>@endcan
-            @can('viewAny', App\Models\Role::class)<li @if(Request::is($lang.'/admin/roles*')) class="active" @endif><a href="/{{ $lang }}/admin/roles"><i class="material-icons md-20">accessibility</i> Роли</a></li>@endcan
-            @can('viewAny', App\Models\Permission::class)<li @if(Request::is($lang.'/admin/permissions*')) class="active" @endif><a href="/{{ $lang }}/admin/permissions"><i class="material-icons md-20">lock_open</i> Права доступа</a></li>@endcan
-          </ul>
-
           <ul class="nav nav-sidebar">
             <li><a href="{{ route('logout', $lang) }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="material-icons md-20">exit_to_app</i> Выйти</a></li>
           </ul>

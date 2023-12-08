@@ -57,7 +57,7 @@ class AddProduct extends Component
             abort(403);
         }
 
-        $this->company = auth()->user()->company;
+        $this->company = auth()->user()->profile->company;
         $this->store = session()->get('storage');
         $this->companies = Company::where('is_supplier', 1)->get();
         $this->product = new Product;
